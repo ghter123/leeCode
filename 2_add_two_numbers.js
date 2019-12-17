@@ -52,33 +52,3 @@ var addTwoNumbers = function (l1, l2) {
 
     return l1Root
 };
-
-var l1 = null
-var l2 = null
-
-console.log(addTwoNumbers(l1, l2))
-
-l1 = {
-    val: 5,
-    next: null
-}
-l2 = {
-    val: 5,
-    next: null
-}
-
-console.log(addTwoNumbers(l1, l2))
-
-l1 = {
-    val: 9, next: {
-        val: 8,
-        next: null
-    }
-}
-
-l2 = {
-    val: 1,
-    next: null
-}
-
-console.log(addTwoNumbers(l1, l2))
