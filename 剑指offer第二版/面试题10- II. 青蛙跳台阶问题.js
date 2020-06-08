@@ -3,13 +3,11 @@
  * @return {number}
  */
 
-const fibNums = [0,1]
-for(let i=2;i<=100;i++) {
+const fibNums = [1,1,2]
+for(let i=3;i<=100;i++) {
     fibNums[i] = (fibNums[i-1] + fibNums[i-2]) % 1000000007
 }
 
-var fib = function (n) {
+var numWays = function (n) {
     return fibNums[n]
 };
-
-console.log(fib(79))
