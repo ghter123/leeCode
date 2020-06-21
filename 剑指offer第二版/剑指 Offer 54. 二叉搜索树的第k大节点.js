@@ -15,8 +15,7 @@ var kthLargest = function (root, k) {
 };
 
 function postorder(root) {
-    if (!root) return []
-    return postorder(root.right)
+    return !root ? [] : postorder(root.right)
         .concat([root.val])
         .concat(postorder(root.left))
 }
