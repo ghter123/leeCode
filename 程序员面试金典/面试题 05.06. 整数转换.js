@@ -4,18 +4,26 @@
  * @return {number}
  */
 var convertInteger = function (A, B) {
-    if (B > A) {
-        const temp = B
-        B = A
-        A = temp
+
+    A = toBinaryString(A)
+    B = toBinaryString(B)
+
+    if (A.length > B.length) {
+        B = B.padStart(A.length, '0')
+    } else {
+        A = A.padStart(B.length, '0')
     }
-    A = A.toString(2)
-    B = B.toString(2).padStart(A.length, 0)
+
     let count = 0
     for (let i = 0; i < A.length; i++) {
         if (A[i] !== B[i]) count++
     }
+
     return count
 };
 
-convertInteger(826966453,-729934991)
+function toBinaryString(num) {
+    return num < 0 ? (~(-num) + 1).toString(2) : num.toString(2)
+}
+
+convertInteger(826966453, -729934991)
