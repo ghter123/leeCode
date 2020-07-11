@@ -11,10 +11,9 @@
  * @return {boolean}
  */
 var isSubStructure = function (A, B) {
-    return preorder(A).search(preorder(B)) != -1
+    return inorder(A).search(inorder(B)) != -1
 };
 
-function preorder(node) {
-    if (!node) return '#'
-    return '' + node.val + preorder(node.left) + preorder(node.right)
+function inorder(node) {
+    return node ? '' + inorder(node.left) + node.val + inorder(node.right) : ''
 }
